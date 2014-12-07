@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>sweetAlert</title>
+  <link rel="stylesheet" href="lib/sweet-alert.css">
+</head>
+<body>
+  <button class="btn">Hit me!</button>
+  <br/>
+  <input type="text">
+  <script src="lib/sweet-alert.js"></script>
+  <script>
+    (function() {
+
+      var btn = document.querySelector(".btn");
+      btn.addEventListener('click', function() {
+        swal({
+          title: "Title",
+          text: "Here's a message!",
+          enforceEsc: true
+        })
+      });
+      /*swal({
+        title: "Title",
+        text: "Here's a message!",
+        enforceEsc: true
+      })*/
+      var intutBtn = document.querySelector('input');
+      intutBtn.addEventListener('keydown', function(e) {
+        if(e.keyCode == 13) {
+          swal("Can you see me?","If you press enter in the input!","warning");
+        }
+      }, false);
+    }).call();
+  </script>
+</body>
+</html>
